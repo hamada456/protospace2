@@ -1,15 +1,14 @@
-class PrototypeController < ApplicationController
+class PrototypesController < ApplicationController
 
   def index
   end
 
   def new
-    # @prototype = prototypes.new
+    @prototype = Prototype.new
   end
 
   def create
-    @prototype = Prototype.find(prototype_params)
-    @prototype.save
+    @prototype = Prototype.new(prototype_params)
     if @prototype.save
       redirect_to root_path
     else
@@ -21,5 +20,5 @@ class PrototypeController < ApplicationController
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
-
+  
 end
