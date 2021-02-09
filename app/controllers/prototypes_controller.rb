@@ -33,6 +33,9 @@ class PrototypesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+  end
   
 
   private
