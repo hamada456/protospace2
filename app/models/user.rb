@@ -11,5 +11,5 @@ class User < ApplicationRecord
   validates :occupation, presence: true
   validates :position  , presence: true
   
-  has_one :comment,dependent: :destroy
+  has_many :comments
 end
