@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
   def create
+    comment.save
+    render :show
   end
 
   private
