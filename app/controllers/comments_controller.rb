@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
   def create
-    comment.save
-    render :show
+    if comment.save
+      redirect_to :show
+    else
+      render :show
+    end
   end
 
   private
